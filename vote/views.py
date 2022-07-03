@@ -1,5 +1,4 @@
 from rest_framework import viewsets, generics, status, permissions
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from vote.models import Election, Candidate, Vote
@@ -68,9 +67,9 @@ class CandidateViewSet(viewsets.ModelViewSet):
 
 class VoteView(generics.GenericAPIView):
     serializer_class = VoteSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated,)
 
-    def get(self):
+    def get(self, request):
         res = {
             'status': True,
             'results': [
