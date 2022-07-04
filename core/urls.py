@@ -42,6 +42,6 @@ urlpatterns = [
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('api/v0/', include([
         path('auth/', include('authentication.urls')),
-        path('vote/', include('vote.urls')),
+        path('', include('vote.urls')),
     ])),
 ]

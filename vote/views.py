@@ -1,6 +1,8 @@
 from rest_framework import viewsets, generics, status, permissions
 from rest_framework.response import Response
+from rest_framework.viewsets import GenericViewSet
 
+from ethereum.scripts.election import create_election, create_vote, get_result
 from vote.models import Election, Candidate, Vote
 from vote.serializers import ElectionSerializer, CandidateSerializer, VoteSerializer
 
@@ -65,27 +67,28 @@ class CandidateViewSet(viewsets.ModelViewSet):
         return super().destroy(request, pk, *args, **kwargs)
 
 
-class VoteView(generics.GenericAPIView):
+class VoteViewSet(GenericViewSet):
     serializer_class = VoteSerializer
+    queryset = Election.objects.all()
     permission_classes = (permissions.IsAuthenticated,)
 
-    def get(self, request):
+    def retrieve(self, request, pk):
+        results = []
+        election = self.get_object()
+        candidates = Candidate.objects.filter(Election=election)
+        for candidate in candidates:
+            vote_count = get_result(election.id, candidate.id)
+            results.append({
+                'id': candidate.id,
+                'count': vote_count,
+            })
         res = {
             'status': True,
-            'results': [
-                {
-                    'id': 1,  # Candidate ID
-                    'count': 50,  # Number of votes
-                },
-                {
-                    'id': 2,  # Candidate ID
-                    'count': 150,  # Number of votes
-                },
-            ],
+            'results': results,
         }
-        return Response(res, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        return Response(res, status=status.HTTP_200_OK)
 
-    def post(self, request):
+    def create(self, request):
         serializer = VoteSerializer(data=self.request.data,
                                     context={'request': self.request})
         serializer.is_valid(raise_exception=True)
@@ -99,6 +102,7 @@ class VoteView(generics.GenericAPIView):
             }
             return Response(res, status=status.HTTP_400_BAD_REQUEST)
 
+        create_vote(data['_election'].id, data['_voter'].id, data['_candidate'].id)
         vote = Vote(Voter=data['_voter'],
                     Candidate=data['_candidate'],
                     Election=data['_election'])
@@ -110,3 +114,19 @@ class VoteView(generics.GenericAPIView):
             'message': 'Vote successfully casted',
         }
         return Response(res, status=status.HTTP_202_ACCEPTED)
+
+
+class ElectionOptionsViewSet(GenericViewSet):
+    serializer_class = ElectionSerializer
+    queryset = Election.objects.all()
+
+    def retrieve(self, request, pk):
+        election = self.get_object()
+        candidates = Candidate.objects.filter(Election=election)
+        candidate_ids = [candidate.id for candidate in candidates]
+        tx = create_election(election.id, election.StartDate, election.EndDate, candidate_ids)
+        res = {
+            'status': True,
+            'message': 'Election registered successfully',
+        }
+        return Response(res, status=status.HTTP_200_OK)

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_yasg',
 
+    'core.apps.CoreAppConfig',
     'authentication',
     'vote',
 ]
@@ -78,7 +79,7 @@ REDOC_SETTINGS = {
    'LAZY_RENDERING': False,
 }
 
-CORS_ALLOWED_ORIGINS = ['*']
+CORS_ALLOWED_ORIGINS = ['http://localhost:4200']
 
 ROOT_URLCONF = 'core.urls'
 
