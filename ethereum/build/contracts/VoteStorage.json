@@ -1,0 +1,3734 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_start_date",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_end_date",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_candidates",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "voter_id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "candidate_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "create_vote",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "candidate_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "get_vote",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "voters_count",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "1": "contracts/VoteStorage.sol"
+  },
+  "ast": {
+    "absolutePath": "contracts/VoteStorage.sol",
+    "exportedSymbols": {
+      "VoteStorage": [
+        245
+      ]
+    },
+    "id": 246,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 127,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.7",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:31:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "VoteStorage",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 245,
+        "linearizedBaseContracts": [
+          245
+        ],
+        "name": "VoteStorage",
+        "nameLocation": "85:11:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 129,
+            "mutability": "mutable",
+            "name": "owner",
+            "nameLocation": "122:5:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 245,
+            "src": "106:21:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 128,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "106:7:1",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 131,
+            "mutability": "mutable",
+            "name": "start_date",
+            "nameLocation": "147:10:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 245,
+            "src": "134:23:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 130,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "134:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 133,
+            "mutability": "mutable",
+            "name": "end_date",
+            "nameLocation": "177:8:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 245,
+            "src": "164:21:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 132,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "164:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 137,
+            "mutability": "mutable",
+            "name": "votes",
+            "nameLocation": "228:5:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 245,
+            "src": "192:41:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+              "typeString": "mapping(uint256 => uint256)"
+            },
+            "typeName": {
+              "id": 136,
+              "keyType": {
+                "id": 134,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "200:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "192:27:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                "typeString": "mapping(uint256 => uint256)"
+              },
+              "valueType": {
+                "id": 135,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "211:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 141,
+            "mutability": "mutable",
+            "name": "results",
+            "nameLocation": "276:7:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 245,
+            "src": "240:43:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+              "typeString": "mapping(uint256 => uint256)"
+            },
+            "typeName": {
+              "id": 140,
+              "keyType": {
+                "id": 138,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "248:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "240:27:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                "typeString": "mapping(uint256 => uint256)"
+              },
+              "valueType": {
+                "id": 139,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "259:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 144,
+            "mutability": "mutable",
+            "name": "voters",
+            "nameLocation": "308:6:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 245,
+            "src": "290:24:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+              "typeString": "uint256[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 142,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "290:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "id": 143,
+              "nodeType": "ArrayTypeName",
+              "src": "290:9:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                "typeString": "uint256[]"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 147,
+            "mutability": "mutable",
+            "name": "candidates",
+            "nameLocation": "339:10:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 245,
+            "src": "321:28:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+              "typeString": "uint256[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 145,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "321:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "id": 146,
+              "nodeType": "ArrayTypeName",
+              "src": "321:9:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                "typeString": "uint256[]"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 174,
+              "nodeType": "Block",
+              "src": "434:138:1",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 160,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 157,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 129,
+                      "src": "445:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 158,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": -15,
+                        "src": "453:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 159,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "src": "453:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "445:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 161,
+                  "nodeType": "ExpressionStatement",
+                  "src": "445:18:1"
+                },
+                {
+                  "expression": {
+                    "id": 164,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 162,
+                      "name": "start_date",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 131,
+                      "src": "474:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 163,
+                      "name": "_start_date",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 149,
+                      "src": "487:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "474:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 165,
+                  "nodeType": "ExpressionStatement",
+                  "src": "474:24:1"
+                },
+                {
+                  "expression": {
+                    "id": 168,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 166,
+                      "name": "end_date",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 133,
+                      "src": "509:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 167,
+                      "name": "_end_date",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 151,
+                      "src": "520:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "509:20:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 169,
+                  "nodeType": "ExpressionStatement",
+                  "src": "509:20:1"
+                },
+                {
+                  "expression": {
+                    "id": 172,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 170,
+                      "name": "candidates",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 147,
+                      "src": "540:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+                        "typeString": "uint256[] storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 171,
+                      "name": "_candidates",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 154,
+                      "src": "553:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                        "typeString": "uint256[] memory"
+                      }
+                    },
+                    "src": "540:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+                      "typeString": "uint256[] storage ref"
+                    }
+                  },
+                  "id": 173,
+                  "nodeType": "ExpressionStatement",
+                  "src": "540:24:1"
+                }
+              ]
+            },
+            "id": 175,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 155,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 149,
+                  "mutability": "mutable",
+                  "name": "_start_date",
+                  "nameLocation": "375:11:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 175,
+                  "src": "370:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 148,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "370:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 151,
+                  "mutability": "mutable",
+                  "name": "_end_date",
+                  "nameLocation": "393:9:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 175,
+                  "src": "388:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 150,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "388:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 154,
+                  "mutability": "mutable",
+                  "name": "_candidates",
+                  "nameLocation": "421:11:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 175,
+                  "src": "404:28:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 152,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "404:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 153,
+                    "nodeType": "ArrayTypeName",
+                    "src": "404:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "369:64:1"
+            },
+            "returnParameters": {
+              "id": 156,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "434:0:1"
+            },
+            "scope": 245,
+            "src": "358:214:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 186,
+              "nodeType": "Block",
+              "src": "599:81:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 181,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "id": 178,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -15,
+                            "src": "618:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 179,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "src": "618:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "id": 180,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 129,
+                          "src": "632:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "618:19:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "5065726d697373696f6e2064656e6965642e",
+                        "id": 182,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "639:20:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_8de75186d315f60983ecde3719d60f658f6f2e6d6b84ce59cca97bed7757aa4b",
+                          "typeString": "literal_string \"Permission denied.\""
+                        },
+                        "value": "Permission denied."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_8de75186d315f60983ecde3719d60f658f6f2e6d6b84ce59cca97bed7757aa4b",
+                          "typeString": "literal_string \"Permission denied.\""
+                        }
+                      ],
+                      "id": 177,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "610:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 183,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "610:50:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 184,
+                  "nodeType": "ExpressionStatement",
+                  "src": "610:50:1"
+                },
+                {
+                  "id": 185,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "671:1:1"
+                }
+              ]
+            },
+            "id": 187,
+            "name": "onlyOwner",
+            "nameLocation": "589:9:1",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 176,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "599:0:1"
+            },
+            "src": "580:100:1",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 222,
+              "nodeType": "Block",
+              "src": "766:271:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 201,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "baseExpression": {
+                            "id": 197,
+                            "name": "votes",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 137,
+                            "src": "785:5:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                              "typeString": "mapping(uint256 => uint256)"
+                            }
+                          },
+                          "id": 199,
+                          "indexExpression": {
+                            "id": 198,
+                            "name": "voter_id",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 189,
+                            "src": "791:8:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "785:15:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "hexValue": "30",
+                          "id": 200,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "804:1:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "785:20:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "5573657220616c726561647920766f7465642e",
+                        "id": 202,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "807:21:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_bf07de9c032e858d4fdee80422c507bd862fb99788d451a9306c7f9793b4ec47",
+                          "typeString": "literal_string \"User already voted.\""
+                        },
+                        "value": "User already voted."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_bf07de9c032e858d4fdee80422c507bd862fb99788d451a9306c7f9793b4ec47",
+                          "typeString": "literal_string \"User already voted.\""
+                        }
+                      ],
+                      "id": 196,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "777:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 203,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "777:52:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 204,
+                  "nodeType": "ExpressionStatement",
+                  "src": "777:52:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 208,
+                        "name": "voter_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 189,
+                        "src": "880:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 205,
+                        "name": "voters",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 144,
+                        "src": "868:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+                          "typeString": "uint256[] storage ref"
+                        }
+                      },
+                      "id": 207,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "src": "868:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_uint256_$dyn_storage_ptr_$_t_uint256_$returns$__$bound_to$_t_array$_t_uint256_$dyn_storage_ptr_$",
+                        "typeString": "function (uint256[] storage pointer,uint256)"
+                      }
+                    },
+                    "id": 209,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "868:21:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 210,
+                  "nodeType": "ExpressionStatement",
+                  "src": "868:21:1"
+                },
+                {
+                  "expression": {
+                    "id": 215,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 211,
+                        "name": "votes",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 137,
+                        "src": "922:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                          "typeString": "mapping(uint256 => uint256)"
+                        }
+                      },
+                      "id": 213,
+                      "indexExpression": {
+                        "id": 212,
+                        "name": "voter_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 189,
+                        "src": "928:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "922:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 214,
+                      "name": "candidate_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 191,
+                      "src": "940:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "922:30:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 216,
+                  "nodeType": "ExpressionStatement",
+                  "src": "922:30:1"
+                },
+                {
+                  "expression": {
+                    "id": 220,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "1006:23:1",
+                    "subExpression": {
+                      "baseExpression": {
+                        "id": 217,
+                        "name": "results",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 141,
+                        "src": "1006:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                          "typeString": "mapping(uint256 => uint256)"
+                        }
+                      },
+                      "id": 219,
+                      "indexExpression": {
+                        "id": 218,
+                        "name": "candidate_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 191,
+                        "src": "1014:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1006:21:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 221,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1006:23:1"
+                }
+              ]
+            },
+            "functionSelector": "88b87a74",
+            "id": 223,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 194,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 193,
+                  "name": "onlyOwner",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 187,
+                  "src": "756:9:1"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "756:9:1"
+              }
+            ],
+            "name": "create_vote",
+            "nameLocation": "697:11:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 192,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 189,
+                  "mutability": "mutable",
+                  "name": "voter_id",
+                  "nameLocation": "717:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 223,
+                  "src": "709:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 188,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "709:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 191,
+                  "mutability": "mutable",
+                  "name": "candidate_id",
+                  "nameLocation": "735:12:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 223,
+                  "src": "727:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 190,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "727:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "708:40:1"
+            },
+            "returnParameters": {
+              "id": 195,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "766:0:1"
+            },
+            "scope": 245,
+            "src": "688:349:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 231,
+              "nodeType": "Block",
+              "src": "1098:39:1",
+              "statements": [
+                {
+                  "expression": {
+                    "expression": {
+                      "id": 228,
+                      "name": "voters",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 144,
+                      "src": "1116:6:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+                        "typeString": "uint256[] storage ref"
+                      }
+                    },
+                    "id": 229,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "src": "1116:13:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 227,
+                  "id": 230,
+                  "nodeType": "Return",
+                  "src": "1109:20:1"
+                }
+              ]
+            },
+            "functionSelector": "40dec728",
+            "id": 232,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "voters_count",
+            "nameLocation": "1054:12:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 224,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1066:2:1"
+            },
+            "returnParameters": {
+              "id": 227,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 226,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 232,
+                  "src": "1089:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 225,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1089:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1088:9:1"
+            },
+            "scope": 245,
+            "src": "1045:92:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 243,
+              "nodeType": "Block",
+              "src": "1214:47:1",
+              "statements": [
+                {
+                  "expression": {
+                    "baseExpression": {
+                      "id": 239,
+                      "name": "results",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 141,
+                      "src": "1232:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                        "typeString": "mapping(uint256 => uint256)"
+                      }
+                    },
+                    "id": 241,
+                    "indexExpression": {
+                      "id": 240,
+                      "name": "candidate_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 234,
+                      "src": "1240:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1232:21:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 238,
+                  "id": 242,
+                  "nodeType": "Return",
+                  "src": "1225:28:1"
+                }
+              ]
+            },
+            "functionSelector": "b87dac52",
+            "id": 244,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get_vote",
+            "nameLocation": "1154:8:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 235,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 234,
+                  "mutability": "mutable",
+                  "name": "candidate_id",
+                  "nameLocation": "1171:12:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 244,
+                  "src": "1163:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 233,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1163:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1162:22:1"
+            },
+            "returnParameters": {
+              "id": 238,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 237,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 244,
+                  "src": "1205:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 236,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1205:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1204:9:1"
+            },
+            "scope": 245,
+            "src": "1145:116:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 246,
+        "src": "76:1190:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:1229:1"
+  },
+  "bytecode": "608060405234801561001057600080fd5b506040516103f43803806103f483398101604081905261002f916100dd565b600080546001600160a01b0319163317905560018390556002829055805161005e906006906020840190610067565b505050506101b1565b8280548282559060005260206000209081019282156100a2579160200282015b828111156100a2578251825591602001919060010190610087565b506100ae9291506100b2565b5090565b5b808211156100ae57600081556001016100b3565b634e487b7160e01b600052604160045260246000fd5b6000806000606084860312156100f257600080fd5b835160208086015160408701519295509350906001600160401b038082111561011a57600080fd5b818701915087601f83011261012e57600080fd5b815181811115610140576101406100c7565b8060051b604051601f19603f83011681018181108582111715610165576101656100c7565b60405291825284820192508381018501918a83111561018357600080fd5b938501935b828510156101a157845184529385019392850192610188565b8096505050505050509250925092565b610234806101c06000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806340dec7281461004657806388b87a741461005c578063b87dac5214610071575b600080fd5b6005545b60405190815260200160405180910390f35b61006f61006a36600461019a565b610091565b005b61004a61007f3660046101bc565b60009081526004602052604090205490565b6000546001600160a01b031633146100e55760405162461bcd60e51b81526020600482015260126024820152712832b936b4b9b9b4b7b7103232b734b2b21760711b60448201526064015b60405180910390fd5b600082815260036020526040902054156101375760405162461bcd60e51b81526020600482015260136024820152722ab9b2b91030b63932b0b23c903b37ba32b21760691b60448201526064016100dc565b60058054600181019091557f036b6384b5eca791c62761152d0c79bb0604c104a5fb6f4eb0703f3154bb3db001829055600082815260036020908152604080832084905583835260049091528120805491610191836101d5565b91905055505050565b600080604083850312156101ad57600080fd5b50508035926020909101359150565b6000602082840312156101ce57600080fd5b5035919050565b60006000198214156101f757634e487b7160e01b600052601160045260246000fd5b506001019056fea2646970667358221220472ff5800aedd55c2901f08b1734ceda790e8416d0c2293770718c96bab8a81e64736f6c634300080b0033",
+  "bytecodeSha1": "ad9b5dccd47a3f22d46cd610e4d6676b4b945aa7",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.8.11+commit.d7f03943"
+  },
+  "contractName": "VoteStorage",
+  "coverageMap": {
+    "branches": {
+      "1": {
+        "VoteStorage.create_vote": {
+          "6": [
+            785,
+            805,
+            true
+          ]
+        }
+      }
+    },
+    "statements": {
+      "1": {
+        "VoteStorage.create_vote": {
+          "2": [
+            777,
+            829
+          ],
+          "3": [
+            868,
+            889
+          ],
+          "4": [
+            922,
+            952
+          ],
+          "5": [
+            1006,
+            1029
+          ]
+        },
+        "VoteStorage.get_vote": {
+          "1": [
+            1225,
+            1253
+          ]
+        },
+        "VoteStorage.voters_count": {
+          "0": [
+            1109,
+            1129
+          ]
+        }
+      }
+    }
+  },
+  "dependencies": [],
+  "deployedBytecode": "608060405234801561001057600080fd5b50600436106100415760003560e01c806340dec7281461004657806388b87a741461005c578063b87dac5214610071575b600080fd5b6005545b60405190815260200160405180910390f35b61006f61006a36600461019a565b610091565b005b61004a61007f3660046101bc565b60009081526004602052604090205490565b6000546001600160a01b031633146100e55760405162461bcd60e51b81526020600482015260126024820152712832b936b4b9b9b4b7b7103232b734b2b21760711b60448201526064015b60405180910390fd5b600082815260036020526040902054156101375760405162461bcd60e51b81526020600482015260136024820152722ab9b2b91030b63932b0b23c903b37ba32b21760691b60448201526064016100dc565b60058054600181019091557f036b6384b5eca791c62761152d0c79bb0604c104a5fb6f4eb0703f3154bb3db001829055600082815260036020908152604080832084905583835260049091528120805491610191836101d5565b91905055505050565b600080604083850312156101ad57600080fd5b50508035926020909101359150565b6000602082840312156101ce57600080fd5b5035919050565b60006000198214156101f757634e487b7160e01b600052601160045260246000fd5b506001019056fea2646970667358221220472ff5800aedd55c2901f08b1734ceda790e8416d0c2293770718c96bab8a81e64736f6c634300080b0033",
+  "deployedSourceMap": "76:1190:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1045:92;1116:6;:13;1045:92;;;160:25:2;;;148:2;133:18;1045:92:1;;;;;;;688:349;;;;;;:::i;:::-;;:::i;:::-;;1145:116;;;;;;:::i;:::-;1205:7;1232:21;;;:7;:21;;;;;;;1145:116;688:349;632:5;;-1:-1:-1;;;;;632:5:1;618:10;:19;610:50;;;;-1:-1:-1;;;610:50:1;;836:2:2;610:50:1;;;818:21:2;875:2;855:18;;;848:30;-1:-1:-1;;;894:18:2;;;887:48;952:18;;610:50:1;;;;;;;;;785:15:::1;::::0;;;:5:::1;:15;::::0;;;;;:20;777:52:::1;;;::::0;-1:-1:-1;;;777:52:1;;1183:2:2;777:52:1::1;::::0;::::1;1165:21:2::0;1222:2;1202:18;;;1195:30;-1:-1:-1;;;1241:18:2;;;1234:49;1300:18;;777:52:1::1;981:343:2::0;777:52:1::1;868:6;:21:::0;;::::1;::::0;::::1;::::0;;;;::::1;::::0;;;-1:-1:-1;922:15:1;;;:5:::1;868:21;922:15:::0;;;;;;;:30;;;1006:21;;;:7:::1;:21:::0;;;;;:23;;;::::1;::::0;::::1;:::i;:::-;;;;;;688:349:::0;;:::o;196:248:2:-;264:6;272;325:2;313:9;304:7;300:23;296:32;293:52;;;341:1;338;331:12;293:52;-1:-1:-1;;364:23:2;;;434:2;419:18;;;406:32;;-1:-1:-1;196:248:2:o;449:180::-;508:6;561:2;549:9;540:7;536:23;532:32;529:52;;;577:1;574;567:12;529:52;-1:-1:-1;600:23:2;;449:180;-1:-1:-1;449:180:2:o;1329:232::-;1368:3;-1:-1:-1;;1389:17:2;;1386:140;;;1448:10;1443:3;1439:20;1436:1;1429:31;1483:4;1480:1;1473:15;1511:4;1508:1;1501:15;1386:140;-1:-1:-1;1553:1:2;1542:13;;1329:232::o",
+  "language": "Solidity",
+  "natspec": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "offset": [
+    76,
+    1266
+  ],
+  "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x41 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x40DEC728 EQ PUSH2 0x46 JUMPI DUP1 PUSH4 0x88B87A74 EQ PUSH2 0x5C JUMPI DUP1 PUSH4 0xB87DAC52 EQ PUSH2 0x71 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x5 SLOAD JUMPDEST PUSH1 0x40 MLOAD SWAP1 DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH2 0x6F PUSH2 0x6A CALLDATASIZE PUSH1 0x4 PUSH2 0x19A JUMP JUMPDEST PUSH2 0x91 JUMP JUMPDEST STOP JUMPDEST PUSH2 0x4A PUSH2 0x7F CALLDATASIZE PUSH1 0x4 PUSH2 0x1BC JUMP JUMPDEST PUSH1 0x0 SWAP1 DUP2 MSTORE PUSH1 0x4 PUSH1 0x20 MSTORE PUSH1 0x40 SWAP1 KECCAK256 SLOAD SWAP1 JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND CALLER EQ PUSH2 0xE5 JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x12 PUSH1 0x24 DUP3 ADD MSTORE PUSH18 0x2832B936B4B9B9B4B7B7103232B734B2B217 PUSH1 0x71 SHL PUSH1 0x44 DUP3 ADD MSTORE PUSH1 0x64 ADD JUMPDEST PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 REVERT JUMPDEST PUSH1 0x0 DUP3 DUP2 MSTORE PUSH1 0x3 PUSH1 0x20 MSTORE PUSH1 0x40 SWAP1 KECCAK256 SLOAD ISZERO PUSH2 0x137 JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x13 PUSH1 0x24 DUP3 ADD MSTORE PUSH19 0x2AB9B2B91030B63932B0B23C903B37BA32B217 PUSH1 0x69 SHL PUSH1 0x44 DUP3 ADD MSTORE PUSH1 0x64 ADD PUSH2 0xDC JUMP JUMPDEST PUSH1 0x5 DUP1 SLOAD PUSH1 0x1 DUP2 ADD SWAP1 SWAP2 SSTORE PUSH32 0x36B6384B5ECA791C62761152D0C79BB0604C104A5FB6F4EB0703F3154BB3DB0 ADD DUP3 SWAP1 SSTORE PUSH1 0x0 DUP3 DUP2 MSTORE PUSH1 0x3 PUSH1 0x20 SWAP1 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 DUP5 SWAP1 SSTORE DUP4 DUP4 MSTORE PUSH1 0x4 SWAP1 SWAP2 MSTORE DUP2 KECCAK256 DUP1 SLOAD SWAP2 PUSH2 0x191 DUP4 PUSH2 0x1D5 JUMP JUMPDEST SWAP2 SWAP1 POP SSTORE POP POP POP JUMP JUMPDEST PUSH1 0x0 DUP1 PUSH1 0x40 DUP4 DUP6 SUB SLT ISZERO PUSH2 0x1AD JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP POP DUP1 CALLDATALOAD SWAP3 PUSH1 0x20 SWAP1 SWAP2 ADD CALLDATALOAD SWAP2 POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP3 DUP5 SUB SLT ISZERO PUSH2 0x1CE JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP CALLDATALOAD SWAP2 SWAP1 POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x0 NOT DUP3 EQ ISZERO PUSH2 0x1F7 JUMPI PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH1 0x0 MSTORE PUSH1 0x11 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST POP PUSH1 0x1 ADD SWAP1 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SELFBALANCE 0x2F CREATE2 DUP1 EXP 0xED 0xD5 0x5C 0x29 ADD CREATE DUP12 OR CALLVALUE 0xCE 0xDA PUSH26 0xE8416D0C2293770718C96BAB8A81E64736F6C634300080B0033 ",
+  "pcMap": {
+    "0": {
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x80"
+    },
+    "2": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "4": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "5": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "CALLVALUE",
+      "path": "1"
+    },
+    "6": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "7": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "ISZERO",
+      "path": "1"
+    },
+    "8": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x10"
+    },
+    "11": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "12": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "14": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "15": {
+      "dev": "Cannot send ether to nonpayable function",
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "REVERT",
+      "path": "1"
+    },
+    "16": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "17": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "18": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x4"
+    },
+    "20": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "CALLDATASIZE",
+      "path": "1"
+    },
+    "21": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "LT",
+      "path": "1"
+    },
+    "22": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x41"
+    },
+    "25": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "26": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "28": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "CALLDATALOAD",
+      "path": "1"
+    },
+    "29": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0xE0"
+    },
+    "31": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "SHR",
+      "path": "1"
+    },
+    "32": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "33": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH4",
+      "path": "1",
+      "value": "0x40DEC728"
+    },
+    "38": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "EQ",
+      "path": "1"
+    },
+    "39": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x46"
+    },
+    "42": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "43": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "44": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH4",
+      "path": "1",
+      "value": "0x88B87A74"
+    },
+    "49": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "EQ",
+      "path": "1"
+    },
+    "50": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x5C"
+    },
+    "53": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "54": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "55": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH4",
+      "path": "1",
+      "value": "0xB87DAC52"
+    },
+    "60": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "EQ",
+      "path": "1"
+    },
+    "61": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x71"
+    },
+    "64": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "65": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "66": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "68": {
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "69": {
+      "first_revert": true,
+      "fn": null,
+      "offset": [
+        76,
+        1266
+      ],
+      "op": "REVERT",
+      "path": "1"
+    },
+    "70": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1045,
+        1137
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "71": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1116,
+        1122
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "statement": 0,
+      "value": "0x5"
+    },
+    "73": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1116,
+        1129
+      ],
+      "op": "SLOAD",
+      "path": "1"
+    },
+    "74": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1045,
+        1137
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "75": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1045,
+        1137
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "77": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1045,
+        1137
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "78": {
+      "op": "SWAP1"
+    },
+    "79": {
+      "op": "DUP2"
+    },
+    "80": {
+      "op": "MSTORE"
+    },
+    "81": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "83": {
+      "op": "ADD"
+    },
+    "84": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1045,
+        1137
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "86": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1045,
+        1137
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "87": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1045,
+        1137
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "88": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1045,
+        1137
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "89": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1045,
+        1137
+      ],
+      "op": "SUB",
+      "path": "1"
+    },
+    "90": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1045,
+        1137
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "91": {
+      "fn": "VoteStorage.voters_count",
+      "offset": [
+        1045,
+        1137
+      ],
+      "op": "RETURN",
+      "path": "1"
+    },
+    "92": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "93": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x6F"
+    },
+    "96": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x6A"
+    },
+    "99": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "CALLDATASIZE",
+      "path": "1"
+    },
+    "100": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x4"
+    },
+    "102": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x19A"
+    },
+    "105": {
+      "fn": "VoteStorage.create_vote",
+      "jump": "i",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "106": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "107": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x91"
+    },
+    "110": {
+      "fn": "VoteStorage.create_vote",
+      "jump": "i",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "111": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "112": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "STOP",
+      "path": "1"
+    },
+    "113": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1145,
+        1261
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "114": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1145,
+        1261
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x4A"
+    },
+    "117": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1145,
+        1261
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x7F"
+    },
+    "120": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1145,
+        1261
+      ],
+      "op": "CALLDATASIZE",
+      "path": "1"
+    },
+    "121": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1145,
+        1261
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x4"
+    },
+    "123": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1145,
+        1261
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x1BC"
+    },
+    "126": {
+      "fn": "VoteStorage.get_vote",
+      "jump": "i",
+      "offset": [
+        1145,
+        1261
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "127": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1145,
+        1261
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "128": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1205,
+        1212
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "130": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1232,
+        1253
+      ],
+      "op": "SWAP1",
+      "path": "1",
+      "statement": 1
+    },
+    "131": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1232,
+        1253
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "132": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1232,
+        1253
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "133": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1232,
+        1239
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x4"
+    },
+    "135": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1232,
+        1253
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x20"
+    },
+    "137": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1232,
+        1253
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "138": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1232,
+        1253
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "140": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1232,
+        1253
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "141": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1232,
+        1253
+      ],
+      "op": "KECCAK256",
+      "path": "1"
+    },
+    "142": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1232,
+        1253
+      ],
+      "op": "SLOAD",
+      "path": "1"
+    },
+    "143": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1232,
+        1253
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "144": {
+      "fn": "VoteStorage.get_vote",
+      "offset": [
+        1145,
+        1261
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "145": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "146": {
+      "offset": [
+        632,
+        637
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "148": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        632,
+        637
+      ],
+      "op": "SLOAD",
+      "path": "1"
+    },
+    "149": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "151": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "153": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "155": {
+      "op": "SHL"
+    },
+    "156": {
+      "op": "SUB"
+    },
+    "157": {
+      "offset": [
+        632,
+        637
+      ],
+      "op": "AND",
+      "path": "1"
+    },
+    "158": {
+      "offset": [
+        618,
+        628
+      ],
+      "op": "CALLER",
+      "path": "1"
+    },
+    "159": {
+      "offset": [
+        618,
+        637
+      ],
+      "op": "EQ",
+      "path": "1"
+    },
+    "160": {
+      "offset": [
+        610,
+        660
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0xE5"
+    },
+    "163": {
+      "offset": [
+        610,
+        660
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "164": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "166": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "167": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "171": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "173": {
+      "op": "SHL"
+    },
+    "174": {
+      "offset": [
+        610,
+        660
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "175": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "176": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "178": {
+      "offset": [
+        610,
+        660
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x4"
+    },
+    "180": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "DUP3",
+      "path": "1"
+    },
+    "181": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "182": {
+      "op": "MSTORE"
+    },
+    "183": {
+      "op": "PUSH1",
+      "value": "0x12"
+    },
+    "185": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "187": {
+      "op": "DUP3"
+    },
+    "188": {
+      "op": "ADD"
+    },
+    "189": {
+      "op": "MSTORE"
+    },
+    "190": {
+      "op": "PUSH18",
+      "value": "0x2832B936B4B9B9B4B7B7103232B734B2B217"
+    },
+    "209": {
+      "op": "PUSH1",
+      "value": "0x71"
+    },
+    "211": {
+      "op": "SHL"
+    },
+    "212": {
+      "op": "PUSH1",
+      "value": "0x44"
+    },
+    "214": {
+      "op": "DUP3"
+    },
+    "215": {
+      "op": "ADD"
+    },
+    "216": {
+      "op": "MSTORE"
+    },
+    "217": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "219": {
+      "op": "ADD"
+    },
+    "220": {
+      "offset": [
+        610,
+        660
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "221": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "223": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "224": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "225": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "226": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "SUB",
+      "path": "1"
+    },
+    "227": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "228": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "REVERT",
+      "optimizer_revert": true,
+      "path": "1"
+    },
+    "229": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        610,
+        660
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "230": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        785,
+        800
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "statement": 2,
+      "value": "0x0"
+    },
+    "232": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        785,
+        800
+      ],
+      "op": "DUP3",
+      "path": "1"
+    },
+    "233": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        785,
+        800
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "234": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        785,
+        800
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "235": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        785,
+        790
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x3"
+    },
+    "237": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        785,
+        800
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x20"
+    },
+    "239": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        785,
+        800
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "240": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        785,
+        800
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "242": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        785,
+        800
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "243": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        785,
+        800
+      ],
+      "op": "KECCAK256",
+      "path": "1"
+    },
+    "244": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        785,
+        800
+      ],
+      "op": "SLOAD",
+      "path": "1"
+    },
+    "245": {
+      "branch": 6,
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        785,
+        805
+      ],
+      "op": "ISZERO",
+      "path": "1"
+    },
+    "246": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        777,
+        829
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x137"
+    },
+    "249": {
+      "branch": 6,
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        777,
+        829
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "250": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        777,
+        829
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "252": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        777,
+        829
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "253": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "257": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "259": {
+      "op": "SHL"
+    },
+    "260": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        777,
+        829
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "261": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        777,
+        829
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "262": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "264": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        777,
+        829
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x4"
+    },
+    "266": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        777,
+        829
+      ],
+      "op": "DUP3",
+      "path": "1"
+    },
+    "267": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        777,
+        829
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "268": {
+      "op": "MSTORE"
+    },
+    "269": {
+      "op": "PUSH1",
+      "value": "0x13"
+    },
+    "271": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "273": {
+      "op": "DUP3"
+    },
+    "274": {
+      "op": "ADD"
+    },
+    "275": {
+      "op": "MSTORE"
+    },
+    "276": {
+      "op": "PUSH19",
+      "value": "0x2AB9B2B91030B63932B0B23C903B37BA32B217"
+    },
+    "296": {
+      "op": "PUSH1",
+      "value": "0x69"
+    },
+    "298": {
+      "op": "SHL"
+    },
+    "299": {
+      "op": "PUSH1",
+      "value": "0x44"
+    },
+    "301": {
+      "op": "DUP3"
+    },
+    "302": {
+      "op": "ADD"
+    },
+    "303": {
+      "op": "MSTORE"
+    },
+    "304": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "306": {
+      "op": "ADD"
+    },
+    "307": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        777,
+        829
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0xDC"
+    },
+    "310": {
+      "op": "JUMP"
+    },
+    "311": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        777,
+        829
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "312": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        874
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "statement": 3,
+      "value": "0x5"
+    },
+    "314": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "315": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "SLOAD",
+      "path": "1"
+    },
+    "316": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x1"
+    },
+    "318": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "319": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "320": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "321": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "322": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "SSTORE",
+      "path": "1"
+    },
+    "323": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "PUSH32",
+      "path": "1",
+      "value": "0x36B6384B5ECA791C62761152D0C79BB0604C104A5FB6F4EB0703F3154BB3DB0"
+    },
+    "356": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "357": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "DUP3",
+      "path": "1"
+    },
+    "358": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "359": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "SSTORE",
+      "path": "1"
+    },
+    "360": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "362": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        937
+      ],
+      "op": "DUP3",
+      "path": "1",
+      "statement": 4
+    },
+    "363": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        937
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "364": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        937
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "365": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        927
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x3"
+    },
+    "367": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        868,
+        889
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x20"
+    },
+    "369": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        937
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "370": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        937
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "371": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        937
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "372": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        937
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "374": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        937
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "375": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        937
+      ],
+      "op": "DUP4",
+      "path": "1"
+    },
+    "376": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        937
+      ],
+      "op": "KECCAK256",
+      "path": "1"
+    },
+    "377": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        952
+      ],
+      "op": "DUP5",
+      "path": "1"
+    },
+    "378": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        952
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "379": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        922,
+        952
+      ],
+      "op": "SSTORE",
+      "path": "1"
+    },
+    "380": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1027
+      ],
+      "op": "DUP4",
+      "path": "1",
+      "statement": 5
+    },
+    "381": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1027
+      ],
+      "op": "DUP4",
+      "path": "1"
+    },
+    "382": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1027
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "383": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1013
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x4"
+    },
+    "385": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1027
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "386": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1027
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "387": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1027
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "388": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1027
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "389": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1027
+      ],
+      "op": "KECCAK256",
+      "path": "1"
+    },
+    "390": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "391": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "SLOAD",
+      "path": "1"
+    },
+    "392": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "393": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x191"
+    },
+    "396": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "DUP4",
+      "path": "1"
+    },
+    "397": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x1D5"
+    },
+    "400": {
+      "fn": "VoteStorage.create_vote",
+      "jump": "i",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "401": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "402": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "403": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "404": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "405": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "SSTORE",
+      "path": "1"
+    },
+    "406": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        1006,
+        1029
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "407": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "408": {
+      "fn": "VoteStorage.create_vote",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "409": {
+      "fn": "VoteStorage.create_vote",
+      "jump": "o",
+      "offset": [
+        688,
+        1037
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "410": {
+      "op": "JUMPDEST"
+    },
+    "411": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "413": {
+      "op": "DUP1"
+    },
+    "414": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "416": {
+      "op": "DUP4"
+    },
+    "417": {
+      "op": "DUP6"
+    },
+    "418": {
+      "op": "SUB"
+    },
+    "419": {
+      "op": "SLT"
+    },
+    "420": {
+      "op": "ISZERO"
+    },
+    "421": {
+      "op": "PUSH2",
+      "value": "0x1AD"
+    },
+    "424": {
+      "op": "JUMPI"
+    },
+    "425": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "427": {
+      "op": "DUP1"
+    },
+    "428": {
+      "op": "REVERT"
+    },
+    "429": {
+      "op": "JUMPDEST"
+    },
+    "430": {
+      "op": "POP"
+    },
+    "431": {
+      "op": "POP"
+    },
+    "432": {
+      "op": "DUP1"
+    },
+    "433": {
+      "op": "CALLDATALOAD"
+    },
+    "434": {
+      "op": "SWAP3"
+    },
+    "435": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "437": {
+      "op": "SWAP1"
+    },
+    "438": {
+      "op": "SWAP2"
+    },
+    "439": {
+      "op": "ADD"
+    },
+    "440": {
+      "op": "CALLDATALOAD"
+    },
+    "441": {
+      "op": "SWAP2"
+    },
+    "442": {
+      "op": "POP"
+    },
+    "443": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "444": {
+      "op": "JUMPDEST"
+    },
+    "445": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "447": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "449": {
+      "op": "DUP3"
+    },
+    "450": {
+      "op": "DUP5"
+    },
+    "451": {
+      "op": "SUB"
+    },
+    "452": {
+      "op": "SLT"
+    },
+    "453": {
+      "op": "ISZERO"
+    },
+    "454": {
+      "op": "PUSH2",
+      "value": "0x1CE"
+    },
+    "457": {
+      "op": "JUMPI"
+    },
+    "458": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "460": {
+      "op": "DUP1"
+    },
+    "461": {
+      "op": "REVERT"
+    },
+    "462": {
+      "op": "JUMPDEST"
+    },
+    "463": {
+      "op": "POP"
+    },
+    "464": {
+      "op": "CALLDATALOAD"
+    },
+    "465": {
+      "op": "SWAP2"
+    },
+    "466": {
+      "op": "SWAP1"
+    },
+    "467": {
+      "op": "POP"
+    },
+    "468": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "469": {
+      "op": "JUMPDEST"
+    },
+    "470": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "472": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "474": {
+      "op": "NOT"
+    },
+    "475": {
+      "op": "DUP3"
+    },
+    "476": {
+      "op": "EQ"
+    },
+    "477": {
+      "op": "ISZERO"
+    },
+    "478": {
+      "op": "PUSH2",
+      "value": "0x1F7"
+    },
+    "481": {
+      "op": "JUMPI"
+    },
+    "482": {
+      "op": "PUSH4",
+      "value": "0x4E487B71"
+    },
+    "487": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "489": {
+      "op": "SHL"
+    },
+    "490": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "492": {
+      "op": "MSTORE"
+    },
+    "493": {
+      "op": "PUSH1",
+      "value": "0x11"
+    },
+    "495": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "497": {
+      "op": "MSTORE"
+    },
+    "498": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "500": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "502": {
+      "op": "REVERT"
+    },
+    "503": {
+      "op": "JUMPDEST"
+    },
+    "504": {
+      "op": "POP"
+    },
+    "505": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "507": {
+      "op": "ADD"
+    },
+    "508": {
+      "op": "SWAP1"
+    },
+    "509": {
+      "jump": "o",
+      "op": "JUMP"
+    }
+  },
+  "sha1": "cd8b88e68754607a064e819c002a31ad36eda252",
+  "source": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.7.0 <0.9.0;\n\n\ncontract VoteStorage {\n\n    address private owner;\n    uint private start_date;\n    uint private end_date;\n    mapping(uint256 => uint256) private votes;\n    mapping(uint256 => uint256) private results;\n    uint256[] private voters;\n    uint256[] private candidates;\n\n    constructor(uint _start_date, uint _end_date, uint256[] memory _candidates) {\n        owner = msg.sender;\n        start_date = _start_date;\n        end_date = _end_date;\n        candidates = _candidates;\n    }\n\n    modifier onlyOwner {\n        require(msg.sender == owner, \"Permission denied.\");\n        _;\n    }\n\n    function create_vote(uint256 voter_id, uint256 candidate_id) public onlyOwner {\n        require(votes[voter_id] == 0, \"User already voted.\");\n\n        // Save voter id\n        voters.push(voter_id);\n        // Save vote\n        votes[voter_id] = candidate_id;\n        // Increment candidate vote count\n        results[candidate_id]++;\n    }\n\n    function voters_count() public view returns(uint256) {\n        return voters.length;\n    }\n\n    function get_vote(uint256 candidate_id) public view returns(uint256) {\n        return results[candidate_id];\n    }\n\n}\n",
+  "sourceMap": "76:1190:1:-:0;;;358:214;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;445:5;:18;;-1:-1:-1;;;;;;445:18:1;453:10;445:18;;;;474:24;;;509:8;:20;;;540:24;;;;:10;;:24;;;;;:::i;:::-;;358:214;;;76:1190;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;76:1190:1;;;-1:-1:-1;76:1190:1;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;14:127:2;75:10;70:3;66:20;63:1;56:31;106:4;103:1;96:15;130:4;127:1;120:15;146:1227;259:6;267;275;328:2;316:9;307:7;303:23;299:32;296:52;;;344:1;341;334:12;296:52;367:16;;402:2;429:18;;;423:25;492:2;477:18;;471:25;367:16;;-1:-1:-1;423:25:2;-1:-1:-1;402:2:2;-1:-1:-1;;;;;545:14:2;;;542:34;;;572:1;569;562:12;542:34;610:6;599:9;595:22;585:32;;655:7;648:4;644:2;640:13;636:27;626:55;;677:1;674;667:12;626:55;706:2;700:9;728:2;724;721:10;718:36;;;734:18;;:::i;:::-;780:2;777:1;773:10;812:2;806:9;875:2;871:7;866:2;862;858:11;854:25;846:6;842:38;930:6;918:10;915:22;910:2;898:10;895:18;892:46;889:72;;;941:18;;:::i;:::-;977:2;970:22;1027:18;;;1061:15;;;;-1:-1:-1;1103:11:2;;;1099:20;;;1131:19;;;1128:39;;;1163:1;1160;1153:12;1128:39;1187:11;;;;1207:135;1223:6;1218:3;1215:15;1207:135;;;1289:10;;1277:23;;1240:12;;;;1320;;;;1207:135;;;1361:6;1351:16;;;;;;;;146:1227;;;;;:::o;:::-;76:1190:1;;;;;;",
+  "sourcePath": "contracts/VoteStorage.sol",
+  "type": "contract"
+}
