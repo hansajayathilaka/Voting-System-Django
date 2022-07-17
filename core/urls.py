@@ -18,6 +18,7 @@ from django.urls import path, include, re_path
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -43,5 +44,7 @@ urlpatterns = [
     path('api/v0/', include([
         path('auth/', include('authentication.urls')),
         path('', include('vote.urls')),
+        path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+        path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     ])),
 ]
