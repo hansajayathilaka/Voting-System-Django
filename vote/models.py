@@ -9,6 +9,7 @@ class Election(models.Model):
     EndDate = models.DateTimeField()
     IsActive = models.BooleanField(default=True)
     ContractAddress = models.CharField(max_length=100)
+    IsRegistered = models.BooleanField(default=False)
 
 
 class Candidate(models.Model):
