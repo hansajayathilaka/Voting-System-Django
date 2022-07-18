@@ -18,24 +18,6 @@ class ElectionViewSet(viewsets.ModelViewSet):
             self.permission_classes = [permissions.IsAuthenticated, permissions.IsAdminUser]
         return super().get_permissions()
 
-    def list(self, request, *args, **kwargs):
-        return super().list(request, *args, **kwargs)
-
-    def create(self, request, *args, **kwargs):
-        return super().create(request, *args, **kwargs)
-
-    def retrieve(self, request, pk=None, *args, **kwargs):
-        return super().retrieve(request, pk, *args, **kwargs)
-
-    def update(self, request, pk=None, *args, **kwargs):
-        return super().update(request, pk, *args, **kwargs)
-
-    def partial_update(self, request, pk=None, *args, **kwargs):
-        return super().partial_update(request, pk, *args, **kwargs)
-
-    def destroy(self, request, pk=None, *args, **kwargs):
-        return super().destroy(request, pk, *args, **kwargs)
-
 
 class CandidateViewSet(viewsets.ModelViewSet):
     queryset = Candidate.objects.all()
@@ -47,24 +29,6 @@ class CandidateViewSet(viewsets.ModelViewSet):
         else:
             self.permission_classes = [permissions.IsAuthenticated, permissions.IsAdminUser]
         return super().get_permissions()
-
-    def list(self, request, *args, **kwargs):
-        return super().list(request, *args, **kwargs)
-
-    def create(self, request, *args, **kwargs):
-        return super().create(request, *args, **kwargs)
-
-    def retrieve(self, request, pk=None, *args, **kwargs):
-        return super().retrieve(request, pk, *args, **kwargs)
-
-    def update(self, request, pk=None, *args, **kwargs):
-        return super().update(request, pk, *args, **kwargs)
-
-    def partial_update(self, request, pk=None, *args, **kwargs):
-        return super().partial_update(request, pk, *args, **kwargs)
-
-    def destroy(self, request, pk=None, *args, **kwargs):
-        return super().destroy(request, pk, *args, **kwargs)
 
 
 class VoteViewSet(GenericViewSet):
