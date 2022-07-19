@@ -8,7 +8,7 @@ import "./VoteStorage.sol";
 contract DynamicVoteStorage {
 
     address public owner;
-    mapping(uint256 => address) private voteStorages;
+    mapping(uint256 => address) public voteStorages;
 
     constructor() {
         owner = msg.sender;

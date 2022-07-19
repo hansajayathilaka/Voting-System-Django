@@ -8,10 +8,10 @@ contract VoteStorage {
     address private owner;
     uint private start_date;
     uint private end_date;
-    mapping(uint256 => uint256) private votes;
-    mapping(uint256 => uint256) private results;
-    uint256[] private voters;
-    uint256[] private candidates;
+    mapping(uint256 => uint256) public votes;
+    mapping(uint256 => uint256) public results;
+    uint256[] public voters;
+    uint256[] public candidates;
 
     constructor(uint _start_date, uint _end_date, uint256[] memory _candidates) {
         owner = msg.sender;
